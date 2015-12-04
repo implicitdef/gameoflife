@@ -6,9 +6,8 @@ const React = require('react');
 const Root = require('./components/Root');
 
 $(() => {
-  ScalaMain().sayHello();
   ReactDOM.render(
-    <Root/>,
+    <Root />,
     $('.root').get(0)
   );
 });
