@@ -1,5 +1,6 @@
 const React = require('react');
 const _ = require('lodash');
+const Matrix = require('./Matrix');
 
 const scala = ScalaMain();
 
@@ -9,7 +10,7 @@ const Displayer = ({message}) => (
 
 const Root = React.createClass({
   getInitialState(){
-    return scala.state;
+    return scala.getState();
   },
   componentWillMount(){
     scala.subscribe((state) => {
@@ -17,7 +18,7 @@ const Root = React.createClass({
     });
   },
   render(){
-    return <Displayer {...this.state}/>;
+    return <Matrix {...this.state}/>;
   }
 });
 
