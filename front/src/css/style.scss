@@ -1,3 +1,17 @@
-* {
-  background : gray;
+
+
+
+.centered-textbox {
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+}
+
+body {
+  @extend .centered-textbox;
+  background : lighten(gray, 10%);
+  & > * {
+    margin : 10px;
+  }
 }

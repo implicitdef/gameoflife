@@ -3,7 +3,7 @@ const _ = require('lodash');
 const Matrix = require('./Matrix');
 
 const scala = ScalaMain();
-
+window.scala = scala;
 const Displayer = ({message}) => (
   <h1>{message}</h1>
 );

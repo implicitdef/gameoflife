@@ -1,5 +1,17 @@
 const React = require('react');
 
+const Cell = React.createClass({
+  shouldComponentUpdate(nextProps, nextState){
+    return nextProps.content != this.props.content;
+  },
+  render(){
+    const {content} = this.props;
+    return <td>{content}</td>
+  }
+});
+
+
+
 const Matrix = ({rows}) => {
   return (<table>
     <tbody>
@@ -8,7 +20,7 @@ const Matrix = ({rows}) => {
           return (<tr key={i}>
             {
               row.map((cell, j) => {
-                return <td key={j}>{cell}</td>;
+                return <Cell key={j} content={cell}/>;
               })
             }
           </tr>);
